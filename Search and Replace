@@ -1,0 +1,19 @@
+function myReplace(str, before, after) {
+  let newStr = str;
+let regex = new RegExp(before, 'gi');
+let regexUpper = /^[A-Z]/;
+let find = newStr.match(regex);
+
+
+if(regexUpper.test(find)){
+  newStr = newStr.replace(regex, after.charAt(0).toUpperCase() + after.slice(1));
+} else {
+  newStr = newStr.replace(regex, after.toLowerCase());
+}
+
+
+console.log(newStr);
+return newStr;
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
