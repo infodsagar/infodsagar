@@ -1,0 +1,27 @@
+function pairElement(str) {
+  let newArray = str.split("");
+  let newDna = [];
+let newA = ['A','T'];
+let newT = ['T','A'];
+let newC = ['C','G'];
+let newG = ['G','C'];
+
+for(let i = 0; i < newArray.length; i++){
+  if(newArray[i] === 'A'){
+    newDna.push(newA);
+  } else if(newArray[i] === 'T') {
+    newDna.push(newT);
+  } else if(newArray[i] === 'C') {
+    newDna.push(newC);
+  } else {
+    newDna.push(newG);
+  }
+}
+
+
+
+console.log(newDna);  
+return newDna;
+}
+
+pairElement("GCG");
