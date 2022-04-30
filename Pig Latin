@@ -1,0 +1,15 @@
+function translatePigLatin(str) {
+  let regexCon = /^[^aeiou]+/g;
+  let regexVow = /^(a|e|i|o|u)/g;
+  let newStr = str;
+
+  if(regexVow.test(str) === true){
+    newStr = newStr.concat('way');
+  } else {
+   newStr = newStr.replace(regexCon, '');
+    newStr = newStr.concat(str.match(regexCon),'ay');
+  }
+  return newStr;
+}
+
+translatePigLatin("algorithm");
