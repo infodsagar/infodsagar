@@ -1,0 +1,32 @@
+function palindrome(str) {
+  let newStr = str.toLowerCase();
+  let regex = /[A-Za-z0-9]/g;
+
+ newStr = newStr.match(regex);
+  
+  
+  let copyStr = str.toLowerCase();
+copyStr = copyStr.match(regex);
+
+  let revStr = [];
+
+  for(let i = 0; i < str.length; i++){
+revStr.push(copyStr.pop());
+  }
+
+
+newStr = newStr.join('');
+revStr = revStr.join('');
+
+
+console.log(newStr);
+console.log(revStr);
+
+if(newStr == revStr){
+  return true;
+} else {
+  return false;
+}
+}
+
+palindrome("A man, a plan, a canal. Panama");
