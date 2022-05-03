@@ -1,0 +1,28 @@
+function rot13(str) {
+  let alpha = {
+   A: 'N', B: 'O', C: 'P', D: 'Q', E: 'R', F: 'S', G: 'T', H: 'U', I: 'V', J: 'W', K: 'X', L: 'Y', M: 'Z', N: 'A', O: 'B', P: 'C', Q: 'D', R: 'E', S: 'F', T: 'G', U: 'H', V: 'I', W: 'J', X: 'K', Y: 'L', Z: 'M'
+  }
+let result = [];
+let newArray = str.split('');
+
+function getKey(object, value) {
+            for (var elem in object) {
+                if (object.hasOwnProperty(elem)) {
+                    if (object[elem] === value)
+                    return elem;
+                } else {
+                  return elem;
+                }
+            }
+        }
+
+for(let i = 0; i < newArray.length; i++){
+result.push(getKey(alpha, newArray[i]));
+}
+console.log(result);
+return result.join('');
+
+
+}
+
+rot13("SERR PBQR PNZC");
