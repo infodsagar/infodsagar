@@ -1,0 +1,22 @@
+function telephoneCheck(str) {
+  str = str.replace(/\s/g, '');
+  
+
+
+  let regex = /((^(\(\d{3}\))|(\([1]\d{3}\))|(^[1]\(\d{3}\)))(\d{3})(\-)(\d{4}))|(\d{3})(\-)(\d{3})(\-)(\d{4})|(\d{10})/g;
+  
+  let regexFilter = /(\(\d{10}\)$)|^(-1|[2-9])(\(\d{3}\)\d{3}\d{4})|(^[2-9](\d{10,12}))|(\(\d{3}\-\d{3}\-\d{4}\)$)|(\d{5}\-\d{3}\-\d{4})|(\(\d{3}\-\d{3}\-\d{4})/g;
+
+
+if(regexFilter.test(str)){
+  return false;
+} else if(regex.test(str)){
+    return true;
+  } else {
+    return false;
+  }
+  
+  
+}
+
+telephoneCheck("27576227382");
