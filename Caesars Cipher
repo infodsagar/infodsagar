@@ -4,25 +4,32 @@ function rot13(str) {
   }
 let result = [];
 let newArray = str.split('');
-
+console.log(newArray);
 function getKey(object, value) {
             for (var elem in object) {
                 if (object.hasOwnProperty(elem)) {
                     if (object[elem] === value)
                     return elem;
-                } else {
-                  return elem;
                 }
             }
         }
 
+
+
+let regex = /[A-Z]/g;
+
 for(let i = 0; i < newArray.length; i++){
-result.push(getKey(alpha, newArray[i]));
+  if(newArray[i].match(regex)){
+  result.push(getKey(alpha, newArray[i]));
+  } else {
+result.push(newArray[i]);
 }
+}
+
+result = result.join('');
 console.log(result);
-return result.join('');
 
-
+return result;
 }
 
-rot13("SERR PBQR PNZC");
+rot13("SERR PBQR");
