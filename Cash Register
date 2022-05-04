@@ -1,19 +1,113 @@
 function checkCashRegister(price, cash, cid) {
   let currency = [
-  ['PENNY',(cid[0][1])/0.01],
-  ['NICKEL',Math.ceil(cid[1][1]/0.05)],
-  ['DIME',Math.ceil(cid[2][1]/0.10)],
-  ['QUARTER',Math.ceil(cid[3][1]/0.25)],
-  ['ONE',Math.ceil(cid[4][1]/1)],
-  ['FIVE',Math.ceil(cid[5][1]/5)],
-  ['TEN',Math.ceil(cid[6][1]/10)],
-  ['TWENTY',Math.ceil(cid[7][1]/20)],
-  ['ONE HUNDRED',Math.ceil(cid[8][1]/100)]
+  ['PENNY',(cid[0][1])/0.01,0.01],
+  ['NICKEL',Math.ceil(cid[1][1]/0.05),0.05],
+  ['DIME',Math.ceil(cid[2][1]/0.10),0.10],
+  ['QUARTER',Math.ceil(cid[3][1]/0.25),0.25],
+  ['ONE',Math.ceil(cid[4][1]/1),1],
+  ['FIVE',Math.ceil(cid[5][1]/5),5],
+  ['TEN',Math.ceil(cid[6][1]/10),10],
+  ['TWENTY',Math.ceil(cid[7][1]/20),20],
+  ['ONE HUNDRED',Math.ceil(cid[8][1]/100),100]
   ];
-  console.log(currency);
+  let change = cash - price;
+
+ let counter = [
+  ['PENNY',0,0.01],
+  ['NICKEL',0,0.05],
+  ['DIME',0,0.10],
+  ['QUARTER',0,0.25],
+  ['ONE',0,1],
+  ['FIVE',0,5],
+  ['TEN',0,10],
+  ['TWENTY',0,20],
+  ['ONE HUNDRED',0,100]
+  ];
+ //console.log(currency);
+
+
+while(change > 0){
+while (change >= currency[8][2] && currency[8][1] > 0) {
+change = change - currency[8][2];
+currency[8][1] = currency[8][1] - 1;
+}
+while (change >= currency[7][2] && currency[7][1] > 0){
+change = change - currency[7][2];
+currency[7][1] = currency[7][1] - 1;
+}
+while (change >= currency[6][2] && currency[6][1] > 0){
+change = change - currency[6][2];
+currency[6][1] = currency[6][1] - 1;
+}
+while (change >= currency[5][2] && currency[5][1] > 0){
+change = change - currency[5][2];
+currency[5][1] = currency[5][1] - 1;
+}
+while (change >= currency[4][2] && currency[4][1] > 0){
+change = change - currency[4][2];
+currency[4][1] = currency[4][1] - 1;
+}
+while (change >= currency[3][2] && currency[3][1] > 0){
+change = change - currency[3][2];
+currency[3][1] = currency[3][1] - 1;
+counter[3][1] = counter[3][1] + 1;
+}
+while (change >= currency[2][2] && currency[2][1] > 0){
+change = change - currency[2][2];
+currency[2][1] = currency[2][1] - 1;
+}
+while (change >= currency[1][2] && currency[1][1] > 0){
+change = change - currency[1][2];
+currency[1][1] = currency[1][1] - 1;
+}
+while (change >= currency[0][2] && currency[0][1] > 0){
+change = change - currency[0][2];
+currency[0][1] = currency[0][1] - 1;
+}
+}
+
+let counter2 = [
+  ['PENNY',counter[0][1]*counter[0][2]],
+  ['NICKEL',counter[1][1]*counter[1][2]],
+  ['DIME',counter[2][1]*counter[2][2]],
+  ['QUARTER',counter[3][1]*counter[3][2]],
+  ['ONE',counter[4][1]*counter[4][2]],
+  ['FIVE',counter[5][1]*counter[5][2]],
+  ['TEN',counter[6][1]*counter[6][2]],
+  ['TWENTY',counter[7][1]*counter[7][2]],
+  ['ONE HUNDRED',counter[8][1]*counter[8][2]]
+  ];
+
+let finder = function() {
+for(let i = 0; i < counter.length; i++){
+  if(counter[i][1] > 0){
+     return counter2[i];
+  }
+}
+  }
+  
+
+
+let result = {
+  status: 'OPEN',
+  change: finder()
+};
+
+return result;
+
+
+
+
+
+
+
+//console.log(counter2);
+//console.log(currency);
 }
 
 
 
 
-checkCashRegister(200, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
+
+
+checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
