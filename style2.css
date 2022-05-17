@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+}
+
+body{
+    background-color: black;
+}
+
+.container{
+    margin-left: 43%;
+    margin-top: 10%;
+}
+
+div{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+}
+
+.top{
+    background: red;
+    height: 300px;
+    width: 200px;
+    box-shadow: 0px 0px 8px 5px inset;
+}
+
+
+.bottom{
+    background-color: white;
+    height: 300px;
+    width: 200px;
+    box-shadow: 0px 0px 8px 5px inset;
+}
+
+.black{
+    background: black;
+    height: 280px;
+    width: 180px;
+    margin-left:10px;
+    margin-top: 10px;
+}
+
+
+
