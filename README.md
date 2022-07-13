@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @Sagar Dobariya
-- 👀 I’m interested in Web Development HTML|CSS|JS|REACT|TypeScript|Bootstrap
+- 👀 I’m interested in Web Development HTML|CSS|JS|REACT|TypeScript|Bootstrap|Tailwind|SASS
 - 🌱 I’m currently learning TypeScript
 - 💞️ I’m looking to collaborate on JavaScript, React and TypeScript  Project
 - 📫 infodsagar@gmail.com
