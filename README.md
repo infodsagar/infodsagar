@@ -1,7 +1,7 @@
-- 👋 Hi, I’m @Sagar Dobariya full-stack developer
-- 👀 I’m interested in Web Development HTML|CSS|JS|REACT|NodeJS|MongoDB|Material UI|TypeScript|Bootstrap|Tailwind|SASS
-- 🌱 I’m currently learning TypeScript
-- 💞️ I’m looking to collaborate on JavaScript, React and Node JS Project
+- 👋 Hi, I’m @Sagar full-stack developer
+- 👀 I’m interested in Web Development HTML|CSS|JS|REACT|NodeJS|.NET CORE|C#|Next JS|MongoDB|Material UI|TypeScript|Bootstrap|Tailwind|SASS
+- 🌱 I’m currently learning .NET CORE
+- 💞️ I’m looking to collaborate on JavaScript, React, Node JS, .NET core Projects
 - 📫 infodsagar@gmail.com
 
 <!---
